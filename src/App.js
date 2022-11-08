@@ -14,6 +14,13 @@ class App extends React.Component {
 
         this.inputClick = this.inputClick.bind(this) // эта строка нужна, чтобы изменять состояния в собственных методах
     }
+
+    componentDidUpdate(prevProp) {
+        if (this.state.helpText !== "help"){
+            console.log("some");
+        }
+    }
+
     render() {
         return(
             <div className="main-section">
