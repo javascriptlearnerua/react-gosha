@@ -1,31 +1,34 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 
-const inputClick = () => alert('clicked');
-const mouseOver = () => console.log('mouse over');
-const helpText = "Help text";
-
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 
-const Header = () => {
-    return(
-        <header>Шапка сайта</header>
-    );
+class Header extends React.Component {
+    render() {
+        return(
+            <header>Шапка сайта</header>
+        );
+    }
 }
 
-function App() {
-    return(
-        <div className="main-section">
-            <Header />
-            <h1>Hello React!</h1>
-            <input
-                placeholder={helpText}
-                onClick={inputClick}
-                onMouseEnter={mouseOver}
-            />
-        </div>
-    );
+class App extends React.Component {
+    render() {
+        return(
+            <div className="main-section">
+                <Header />
+                <h1>Hello React!</h1>
+                <input
+                    placeholder={this.helpText}
+                    onClick={this.inputClick}
+                    onMouseEnter={this.mouseOver}
+                />
+            </div>
+        );
+    }
+    helpText = "Help text";
+    inputClick() { alert('clicked') }
+    mouseOver () { console.log('mouse over') }
 }
 
 
