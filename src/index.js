@@ -7,7 +7,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 class Header extends React.Component {
     render() {
         return(
-            <header>Шапка сайта</header>
+            <header>{this.props.title}</header>
         );
     }
 }
@@ -16,7 +16,7 @@ class App extends React.Component {
     render() {
         return(
             <div className="main-section">
-                <Header />
+                <Header title="Шапка сайта"/>
                 <h1>Hello React!</h1>
                 <input
                     placeholder={this.helpText}
