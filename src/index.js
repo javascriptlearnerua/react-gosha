@@ -7,6 +7,7 @@ const helpText = "Help text";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
+
 const Header = () => {
     return(
         <header>Шапка сайта</header>
