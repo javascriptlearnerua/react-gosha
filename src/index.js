@@ -1,17 +1,33 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+
+const inputClick = () => alert('clicked');
+const mouseOver = () => console.log('mouse over');
+const helpText = "Help text";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+const Header = () => {
+    return(
+        <header>Шапка сайта</header>
+    );
+}
+
+function App() {
+    return(
+        <div className="main-section">
+            <Header />
+            <h1>Hello React!</h1>
+            <input
+                placeholder={helpText}
+                onClick={inputClick}
+                onMouseEnter={mouseOver}
+            />
+        </div>
+    );
+}
+
+
+
+root.render(<App/>);
+
